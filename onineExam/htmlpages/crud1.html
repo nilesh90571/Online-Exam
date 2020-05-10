@@ -1,0 +1,86 @@
+
+<h1 class="h2">Crud Question</h1>
+<div id="crudQuestion"></div>
+<div class="btn-toolbar mb-2 mb-md-0">
+     <div class="btn-group mr-2">
+          <button type="button" class="btn btn-sm btn-outline-secondary">
+               Share
+          </button>
+          <button type="button" class="btn btn-sm btn-outline-secondary">
+               Export
+          </button>
+     </div>
+     <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+          <span data-feather="calendar"></span>
+          This week
+     </button>
+</div>
+</div>
+<div>
+     <div class="form-group">
+          <label for="questionId">Question Id</label>
+          <label class="form-control" id="id" for=""></label>
+     </div>
+     <div class="form-group">
+          <label for="questionss">Question</label>
+          <textarea class="form-control" name="" id="name" cols="30" rows="10"
+               placeholder="Type question here"></textarea>
+     </div>
+     <div class="form-group">
+          <label for="optionA">OptionA</label>
+          <input class="form-control" type="text" name="" id="option1" placeholder="Type OptionA" />
+     </div>
+     <div class="form-group">
+          <label for="questionId">OptionB</label>
+          <input class="form-control" type="text" name="" id="option2" placeholder="Type OptionB" />
+     </div>
+     <div class="form-group">
+          <label for="optionC">OptionC</label>
+          <input class="form-control" type="text" name="" id="option3" placeholder="Type OptionC" />
+     </div>
+     <div class="form-group">
+          <label for="questionId">OptionD</label>
+          <input class="form-control" type="text" name="" id="option4" placeholder="Type OptionD" />
+     </div>
+     <div class="form-group">
+          <label for="ans">Right Answer</label>
+          <input class="form-control" type="text" name="" id="rans" placeholder="Type right answer" />
+     </div>
+     <div class="form-group">
+          <label for="ans">Score</label>
+          <input class="form-control" type="range" name="score" id="score" min="1" max="5" />
+     </div>
+</div>
+<div>
+     <button id="add" class="btn btn-primary">Add</button>
+     <button id="delete" class="btn btn-secoundary">Delete</button>
+     <button class="btn btn-success">Save</button>
+     <button class="btn btn-secoundary">Update</button>
+     <button class="btn btn-success">Load</button>
+     <button class="btn btn-warning">Clear All</button>
+     <button class="btn btn-info">Search</button>
+     <button id="loadServer" class="btn btn-success">
+          Load Into Server</button><button id="fetchServer" class="btn btn-secoundary">
+          Fetch From Server
+     </button>
+</div>
+<div>
+     <h3>
+          Total Records are <span id="total"></span> Mark Records
+          <span id="mark"></span> UnMark Records<span id="unmark"></span>
+     </h3>
+     <table class="table table-bordered">
+          <thead class="thead-dark">
+               <th>Question Id</th>
+               <th>Name</th>
+               <th>OptionA</th>
+               <th>OptionB</th>
+               <th>OptionC</th>
+               <th>OptionD</th>
+               <th>Right Ans</th>
+               <th>Score</th>
+               <th>Operations</th>
+          </thead>
+          <tbody id="question"></tbody>
+     </table>
+</div>

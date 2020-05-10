@@ -1,0 +1,209 @@
+ <!DOCTYPE html>
+ <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Jekyll v3.8.5" />
+    <title>Online Quiz</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link href="index.css" rel="stylesheet" />
+    <script src="scripts/dologin.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+    <script src="scripts/utils/firebase.js"></script>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+    </style>
+    <!-- Custom styles for this template -->
+  </head>
+
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">ONLINE EXAM</h3>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">Evaluate your knowledge</h1>
+        <style>h1{
+          color:black;
+        }</style>
+        <p class="lead">
+          Online examination system-2020  <!-- is a platform that provides teachers to add quiz on different subject and 
+          enbales the students to examine their knowledge based on the quiz provided by the teachers.
+          Examine their knowledge and check your scores. 
+          Test your skills, review your answers, find out the correct answers, ask queries and get 
+          solutions by respective faculty members. --> 
+          <!-- Take Free Online General Knowledge Quizzes, Current Affairs Quizzes,
+          Aptitude Quizzes, logical reasoning Quizzes ,verbal ability Quizzes
+          and lot more... -->
+        </p>
+        <style>p{
+          color:black;
+        }</style>
+
+        <p class="lead">
+          <!-- <a href="login.html" id="login" class="btn btn-lg btn-primary"
+            >Login</a -->
+          <button id="loginButton" class="btn btn-success">Login</button>
+          <button id="loginRegister" class="btn btn-primary">Register</button>
+        </p>
+        <div class="container" id="login">
+          <h1 class=" text-center">Login Form</h1>
+          <h3 id="error" class="alert-danger"></h3>
+          <div class="form-group  ">
+            <label for="">UserId</label>
+            <input
+              class="form-control"
+              type="text"
+              name="userid"
+              id="userId"
+              placeholder="Type User Id here"
+            />
+          </div>
+          <div class="form-group">
+            <label for="">Password</label>
+            <input
+              class="form-control"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="type password here"
+            />
+          </div>
+          <div class="form-group">
+            <button id="submit" class="btn btn-primary">
+              Submit
+            </button>
+            <button id="clearall" class="btn btn-danger">
+              Clear
+            </button>
+          </div>
+        </div>
+        <div class="container" id="register">
+          <h1 class=" text-center">Register Form</h1>
+          <h3 id="error" class="alert-danger"></h3>
+          <div class="form-group  ">
+            <label for="">UserName/Email</label>
+            <input
+              class="form-control"
+              type="text"
+              name="userid"
+              id="ruserId"
+              placeholder="Type User Id here"
+            />
+          </div>
+          <div class="form-group">
+            <label for="">Password</label>
+            <input
+              class="form-control"
+              type="password"
+              name="password"
+              id="rpassword"
+              placeholder="type password here"
+            />
+          </div>
+          <div class="form-group">
+            <label for="">Conform-Password</label>
+            <input
+              class="form-control"
+              type="password"
+              name="password"
+              id="cPassword"
+              placeholder="type password here"
+            />
+          </div>
+          <div class="form-group">
+            <button id="reg" class="btn btn-primary">
+              Register
+            </button>
+            <button id="clearall" class="btn btn-danger">Clear</button>
+          </div>
+        </div>
+      </main>
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>
+            Cover template for
+            <a href="https://getbootstrap.com/">EXAM</a>, by
+            <a href="https://twitter.com/mdo">@mdo</a>.
+          </p>
+        </div>
+      </footer>
+    </div>
+    <script>
+      window.onload = function() {
+    document.addEventListener("contextmenu", function(e){
+      e.preventDefault();
+    }, false);
+    document.addEventListener("keydown", function(e) {
+    //document.onkeydown = function(e) {
+      // "I" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+        disabledEvent(e);
+      }
+      // "J" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+        disabledEvent(e);
+      }
+      // "S" key + macOS
+      if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+        disabledEvent(e);
+      }
+      // "U" key
+      if (e.ctrlKey && e.keyCode == 85) {
+        disabledEvent(e);
+      }
+      // "F12" key
+      if (event.keyCode == 123) {
+        disabledEvent(e);
+      }
+    }, false);
+    function disabledEvent(e){
+      if (e.stopPropagation){
+        e.stopPropagation();
+      } else if (window.event){
+        window.event.cancelBubble = true;
+      }
+      e.preventDefault();
+      return false;
+    }
+};
+
+    </script>
+  </body>
+</html>

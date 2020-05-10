@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <script src="scripts/dologin.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="alert-success text-center">Login Page</h1>
+      <h3 id="error" class="alert-danger"></h3>
+      <div class="form-group  ">
+        <label for="">UserId</label>
+        <input
+          class="form-control"
+          type="text"
+          name="userid"
+          id="userId"
+          placeholder="Type User Id here"
+        />
+      </div>
+      <div class="form-group">
+        <label for="">Password</label>
+        <input
+          class="form-control"
+          type="password"
+          name="password"
+          id="password"
+          placeholder="type password here"
+        />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" onclick="doLogin()">Submit</button>
+        <button class="btn btn-danger" onclick="clearall()">Clear</button>
+      </div>
+    </div>
+  </body>
+</html>
